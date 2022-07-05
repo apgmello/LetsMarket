@@ -1,12 +1,25 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿using LetsMarket.Entidades;
 
-namespace LetsMarket.Menu4
+namespace LetsMarket.Menu
 {
-    public class Program
+    public class Program //Deveria chamar menu? menuSupremo?
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Funcionario funcionario;
+            do
+            {
+                do
+                {
+                    funcionario = Funcionarios.FazerLogin();
+                } while (funcionario == null);
+                if (funcionario.Login == "admin")
+                {
+                    Funcionarios.CadastrarFuncionario();
+                    funcionario = null; //sair
+                    Console.Clear();
+                }
+            } while (funcionario == null);
             Console.ResetColor();
             Console.Title = "Let's Store";
 
@@ -17,7 +30,7 @@ namespace LetsMarket.Menu4
             produtos.Add(new MenuItem("Listar Produtos", Produtos.ListarProdutos));
 
             var funcionarios = new MenuItem("Funcionários");
-            funcionarios.Add(new MenuItem("Cadastrar Funcionários", Funcionarios.CadastrarFuncionarios));
+            funcionarios.Add(new MenuItem("Cadastrar Funcionários", Funcionarios.CadastrarFuncionario));
             funcionarios.Add(new MenuItem("Listar Funcionários", Funcionarios.ListarFuncionarios));
 
             var submenu = new MenuItem("Submenu");

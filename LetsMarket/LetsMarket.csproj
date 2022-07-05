@@ -11,4 +11,8 @@
     <PackageReference Include="BetterConsoleTables" Version="1.1.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LetsMarket.Menu\LetsMarket.Menu.csproj" />
+  </ItemGroup>
+
 </Project>

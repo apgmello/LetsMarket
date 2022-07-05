@@ -41,7 +41,7 @@ namespace LetsMarket
     {
         static void Main(string[] args)
         {
-
+            Menu.Program.Main(args);
         }
     }
 }

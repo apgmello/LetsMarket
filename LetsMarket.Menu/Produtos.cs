@@ -1,4 +1,4 @@
-﻿namespace LetsMarket.Menu4
+﻿namespace LetsMarket.Menu
 {
     public class Produtos
     {
